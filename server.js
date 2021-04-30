@@ -57,7 +57,7 @@ const firestore = new Firestore(
 
 // health endpoint - returns an empty array
 app.get('/', (req, res) => {
-    res.json([]);
+    getEvents(req, res);
 });
 
 // version endpoint to provide easy convient method to demonstrating tests pass/fail
@@ -70,7 +70,6 @@ app.get('/version', (req, res) => {
 // if you went on to develop this as a real application.
 app.get('/events', (req, res) => {
     getEvents(req, res);
-
 });
 
 // Adds an event - in a real solution, this would insert into a cloud datastore.
